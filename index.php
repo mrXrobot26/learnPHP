@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>learnPHP</title>
-</head>
-<body>
-
-    <?php
-        $greeting = "Hello";
-        $naming ="Ppl";
-        echo $greeting . " " . $naming;
-
-    ?>
+<?php
+$greeting = "Hello";
+$naming = "Ppl";
 
 
-  <?php
+
+
+
 $books = [
     [
         'name' => 'Book 1',
@@ -30,21 +20,12 @@ $books = [
         'auther' => 'bessa 3'
     ]
 ];
-?>
 
-<ul>
 
-    <?php foreach($books as $book): ?>
-    
-        <li> <?= $book['name']?> by <?=$book['auther']?> </li>
-
-    <?php  endforeach; ?>
-
-</ul>
+$myFiltter = array_filter($books, function ($book) {
+    return $book['name'] == 'Book 1';
+});
 
 
 
-
-
-</body>
-</html>
+require "index.view.php";
